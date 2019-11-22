@@ -11,18 +11,21 @@ namespace Store.BusinessLogic.BL
 {
     public class CategoriaBL : ICategoriaBL
     {
+        private CategoriaDao _categoriaDao;
+
         public CategoriaBL()
         {
+            this._categoriaDao = new CategoriaDao();
         }
 
         public List<Categoria> Listar()
         {
-            throw new NotImplementedException();
+            return this._categoriaDao.Select();
         }
 
         public void Dispose()
         {
-            
+            this._categoriaDao.Dispose();
         }
     }
 }
